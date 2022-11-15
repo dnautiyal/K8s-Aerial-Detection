@@ -24,7 +24,7 @@ spec:
         io.kompose.service: webapp
     spec:
       containers:
-        - image: 681261969843.dkr.ecr.us-east-1.amazonaws.com/mlo4petbokeh:latest
+        - image: 681261969843.dkr.ecr.us-east-1.amazonaws.com/deepak-ae-webapp:latest
           name: webapp
           ports:
             - containerPort: 8080

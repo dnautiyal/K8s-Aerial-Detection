@@ -24,7 +24,7 @@ spec:
         io.kompose.service: inference
     spec:
       containers:
-        - image: 681261969843.dkr.ecr.us-east-1.amazonaws.com/mlo4/face-emotion:latest
+        - image: 681261969843.dkr.ecr.us-east-1.amazonaws.com/deepak-ae-inference:latest
           name: inference
           ports:
             - containerPort: 8000

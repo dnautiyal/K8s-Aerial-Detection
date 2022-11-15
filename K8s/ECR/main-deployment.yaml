@@ -24,7 +24,7 @@ spec:
         io.kompose.service: main
     spec:
       containers:
-        - image: 681261969843.dkr.ecr.us-east-1.amazonaws.com/mlo4main:latest
+        - image: 681261969843.dkr.ecr.us-east-1.amazonaws.com/deepak-ae-main:latest
           name: main
           ports:
             - containerPort: 8000
