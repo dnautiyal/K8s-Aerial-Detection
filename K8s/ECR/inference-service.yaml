@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: inference
+  name: face-emotion
+spec:
+  ports:
+    - name: "8005"
+      port: 8005
+      targetPort: 8000
+  selector:
+    io.kompose.service: inference
+status:
+  loadBalancer: {}
