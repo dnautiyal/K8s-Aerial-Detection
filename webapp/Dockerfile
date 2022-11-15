@@ -6,4 +6,4 @@ WORKDIR /aerial-detection-client
 EXPOSE 8080
 # ENTRYPOINT ["./gunicorn.sh"]
 # CMD ["uvicorn", "application:app","--host", "0.0.0.0"]
-ENTRYPOINT -w 4 gunicorn application:app --threads 2 -b 0.0.0.0:8080
+ENTRYPOINT gunicorn application:app -w 4 --threads 2 -b 0.0.0.0:8080
