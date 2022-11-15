@@ -49,9 +49,9 @@ spec:
           name: triton
           runtime: nvidia
           # shm_size: 2g
-          ulimits:
-            memlock: -1
-            stack: 67108864
+          # ulimits:
+          #   memlock: -1
+          #   stack: 67108864
           ports:
             - containerPort: 8000
               name: http
