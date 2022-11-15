@@ -47,7 +47,7 @@ spec:
                   name: aws-env
           image: nvcr.io/nvidia/tritonserver:22.02-py3
           name: triton
-            runtime: nvidia
+          runtime: nvidia
           shm_size: 2g
           ulimits:
               memlock: -1
