@@ -47,23 +47,23 @@ spec:
                   name: aws-env
           image: nvcr.io/nvidia/tritonserver:22.02-py3
           name: triton
-          runtime: nvidia
+            runtime: nvidia
           shm_size: 2g
-              ulimits:
-                  memlock: -1
-                  stack: 67108864
-              env_file:
-                  - .aws.env
-                ports:
-                  - containerPort: 8000
-                    name: http
-                  - containerPort: 8001
-                    name: grpc
-                  - containerPort: 8002
-                    name: metrics
-                resources:
-                  limits:
-                    nvidia.com/gpu: 1
+          ulimits:
+              memlock: -1
+              stack: 67108864
+          env_file:
+              - .aws.env
+          ports:
+            - containerPort: 8000
+              name: http
+            - containerPort: 8001
+              name: grpc
+            - containerPort: 8002
+              name: metrics
+          resources:
+            limits:
+              nvidia.com/gpu: 1
 
       restartPolicy: Always
 status: {}
