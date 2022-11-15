@@ -72,7 +72,7 @@ kubectl create secret generic aws-env --from-literal='AWS_ACCESS_KEY_ID=YOUR_ACC
 ```
 docker build -t main .
 docker build -t webapp webapp/
-docker build -t inference inference-service/
+docker build -t inference inference_service/
 ```
 
 - Load all the kubernetes resources (`kubectl apply -f K8s/`)

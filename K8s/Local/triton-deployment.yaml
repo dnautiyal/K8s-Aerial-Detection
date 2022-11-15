@@ -26,8 +26,8 @@ spec:
       containers:
         - args:
             - tritonserver
-            - --model-repository=s3://aerial-detection-mlops4/model/Visdrone/Yolov7/triton-deploy/models/ 
-            - --strict-model-config=false
+            - --model-repository=s3://aerial-detection-mlops4/model/Visdrone/Yolov7/triton-deploy/models/
+	          - --strict-model-config=false
 
           env:
             - name: AWS_ACCESS_KEY_ID
