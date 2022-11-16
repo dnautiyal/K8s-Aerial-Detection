@@ -59,9 +59,7 @@ spec:
             - containerPort: 8001
             - containerPort: 8002
           resources:
-            requests:
-              memory: "2Gi"              
             limits:
-              memory: "5Gi"              
+              nvidia.com/mig-1g.5gb: 1              
       restartPolicy: Always
 status: {}
