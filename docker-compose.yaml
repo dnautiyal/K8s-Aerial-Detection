@@ -32,7 +32,7 @@ services:
       - "8006:8080"
   triton:
     image: nvcr.io/nvidia/tritonserver:22.02-py3
-    runtime: nvidia
+    # runtime: nvidia
     env_file:
       - .aws.env
     ports:
