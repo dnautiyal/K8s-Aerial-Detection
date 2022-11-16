@@ -30,6 +30,10 @@ spec:
       #       sizeLimit: 2048Mi
       containers:
         - args:
+            - --gpus all 
+            - --shm-size=1g
+            - --ulimit memlock=-1 
+            - --ulimit stack=67108864
             - tritonserver
             - --model-repository=s3://aerial-detection-mlops4/model/Visdrone/Yolov7/triton-deploy/models/
             - --strict-model-config=false
