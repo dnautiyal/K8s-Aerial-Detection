@@ -75,7 +75,7 @@ docker build -t webapp webapp/
 docker build -t inference inference_service/
 ```
 
-- Load all the kubernetes resources (`kubectl apply -f K8s/`)
+- Load all the kubernetes resources (`kubectl apply -f K8s/Local/`)
 - Forward the main port:
 
 ```
