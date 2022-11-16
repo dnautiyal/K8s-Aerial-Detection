@@ -27,7 +27,7 @@ spec:
         - name: shm
           emptyDir:
             medium: Memory
-            sizeLimit: "2048Mi"
+            sizeLimit: 2048Mi
       containers:
         - args:
             - tritonserver
@@ -69,13 +69,13 @@ spec:
               name: metrics
           resources:
             requests:
-              memory: "2Gi"
-              cpu: "2"
-              nvidia.com/gpu: "1"
+              memory: 2Gi
+              cpu: 2
+              nvidia.com/gpu: 1
             limits:
-              memory: "5Gi"
-              cpu: "4"
-              nvidia.com/gpu: "1"
+              memory: 5Gi
+              cpu: 4
+              nvidia.com/gpu: 1
 
       restartPolicy: Always
 status: {}
