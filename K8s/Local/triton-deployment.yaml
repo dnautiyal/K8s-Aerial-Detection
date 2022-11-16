@@ -23,6 +23,11 @@ spec:
       labels:
         io.kompose.service: triton
     spec:
+      volumes:                          
+        - name: shm
+          emptyDir:
+            medium: Memory
+            sizeLimit: "2048Mi"
       containers:
         - args:
             - tritonserver
@@ -47,13 +52,16 @@ spec:
                   name: aws-env
           image: nvcr.io/nvidia/tritonserver:22.02-py3
           name: triton
-	  runtime: nvidia
-	  shm_size: 2g
-    	  ulimits:
-      	    memlock: -1
-            stack: 67108864
-    	  env_file:
-      	    - .aws.env
+	        # runtime: nvidia
+          volumeMounts:
+            - mountPath: /dev/shm
+              name: shm
+	        # shm_size: 2g
+    	    # ulimits:
+      	  #   memlock: -1
+          #   stack: 67108864
+    	    # env_file:
+      	  #   - .aws.env
           ports:
             - containerPort: 8000
               name: http
@@ -62,8 +70,15 @@ spec:
             - containerPort: 8002
               name: metrics
           resources:
+            requests:
+              memory: "2Gi"
+              cpu: "2"
+              nvidia.com/gpu: "1"
             limits:
-              nvidia.com/gpu: 1
+              memory: "5Gi"
+              cpu: "4"
+              nvidia.com/gpu: "1"
+
 
       restartPolicy: Always
 status: {}

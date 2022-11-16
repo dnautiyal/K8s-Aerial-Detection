@@ -7,7 +7,7 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: inference
-  name: face-emotion
+  name: inference
 spec:
   ports:
     - name: "8005"

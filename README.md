@@ -85,6 +85,11 @@ kubectl port-forward svc/main 8004:8004 --address 0.0.0.0
 kubectl port-forward svc/triton 8002:8002 --address 0.0.0.0
 <!-- kubectl port-forward svc/main 9090:9090 --address 0.0.0.0 -->
 ```
+
+- to completely delete all the pods in K8s cluster, run the following command:
+```
+kubectl delete all --all --namespace default
+```
 # FlaskMLops
 
 - docker build -t aerial-detection-webapp .
