@@ -23,6 +23,10 @@ spec:
       labels:
         io.kompose.service: triton
     spec:
+      volumes:
+        - name: dshm
+          emptyDir:
+            medium: Memory
       containers:
         - args:
             - tritonserver
@@ -47,6 +51,9 @@ spec:
                   name: aws-env
           image: nvcr.io/nvidia/tritonserver:22.02-py3
           name: triton
+          volumeMounts:
+            - mountPath: /dev/shm
+              name: dshm
           ports:
             - containerPort: 8000
             - containerPort: 8001
