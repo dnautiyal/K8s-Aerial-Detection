@@ -19,8 +19,8 @@ BUFF_SIZE = 10 * MB
 ALLOWED_PHOTO_FILE_EXTENSIONS = {'jpg'}
 ALLOWED_VIDEO_FILE_EXTENSIONS = {'mp4'}
 logger = logging.getLogger(__name__)
-PHOTO_INFERENCE_SERVICE_ENDPOINT = "http://inference-service:8000/detect"
-VIDEO_INFERENCE_SERVICE_ENDPOINT = "http://inference-service:8000/detect_video"
+PHOTO_INFERENCE_SERVICE_ENDPOINT = "http://inference:8000/detect"
+VIDEO_INFERENCE_SERVICE_ENDPOINT = "http://inference:8000/detect_video"
 
 S3_BUCKET = "aerial-detection-mlops4"
 PHOTO_INPUT_S3_KEY =  "inferencing/photos/input"
