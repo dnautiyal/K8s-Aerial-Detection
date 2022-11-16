@@ -3,23 +3,23 @@ kind: Service
 metadata:
   annotations:
     kompose.cmd: kompose convert
-    kompose.version: 1.26.0 (40646f47)
+    kompose.version: 1.26.1 (a9d05d509)
   creationTimestamp: null
   labels:
     io.kompose.service: triton
   name: triton
 spec:
   ports:
-    - port: 8000
-      targetPort: http
-      name: http-inference-server
-    - port: 8001
-      targetPort: grpc
-      name: grpc-inference-server
-    - port: 8002
-      targetPort: metrics
-      name: metrics-inference-server
+    - name: "8000"
+      port: 8000
+      targetPort: 8000
+    - name: "8001"
+      port: 8001
+      targetPort: 8001
+    - name: "8002"
+      port: 8002
+      targetPort: 8002
   selector:
     io.kompose.service: triton
 status:
-  loadBalancer: {}
+  loadBalancer: {}                     
