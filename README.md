@@ -79,10 +79,10 @@ docker build -t inference inference_service/
 - Forward the main port:
 
 ```
-kubectl port-forward svc/main 8005:8005 --address 0.0.0.0
-kubectl port-forward svc/main 8006:8006 --address 0.0.0.0
 kubectl port-forward svc/main 8004:8004 --address 0.0.0.0
-kubectl port-forward svc/main 8002:8002 --address 0.0.0.0
+kubectl port-forward svc/webapp 8006:8006 --address 0.0.0.0
+kubectl port-forward svc/main 8004:8004 --address 0.0.0.0
+kubectl port-forward svc/triton 8002:8002 --address 0.0.0.0
 <!-- kubectl port-forward svc/main 9090:9090 --address 0.0.0.0 -->
 ```
 # FlaskMLops
