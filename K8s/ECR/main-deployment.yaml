@@ -22,8 +22,9 @@ spec:
       creationTimestamp: null
       labels:
         io.kompose.service: main
-    spec:
-      env:
+    spec:      
+      containers:
+        env:
         - name: AWS_ACCESS_KEY_ID
           valueFrom:
             secretKeyRef:
@@ -39,7 +40,6 @@ spec:
             secretKeyRef:
               key: AWS_SECRET_ACCESS_KEY
               name: aws-env
-      containers:
         - image: 681261969843.dkr.ecr.us-east-1.amazonaws.com/deepak-ae-main:latest
           name: main
           ports:

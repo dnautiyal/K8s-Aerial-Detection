@@ -23,24 +23,24 @@ spec:
       labels:
         io.kompose.service: webapp
     spec:
-      env:
-        - name: AWS_ACCESS_KEY_ID
-          valueFrom:
-            secretKeyRef:
-              key: AWS_ACCESS_KEY_ID
-              name: aws-env
-        - name: AWS_DEFAULT_REGION
-          valueFrom:
-            secretKeyRef:
-              key: AWS_DEFAULT_REGION
-              name: aws-env
-        - name: AWS_SECRET_ACCESS_KEY
-          valueFrom:
-            secretKeyRef:
-              key: AWS_SECRET_ACCESS_KEY
-              name: aws-env
       containers:
-        - image: 681261969843.dkr.ecr.us-east-1.amazonaws.com/deepak-ae-webapp:latest
+        - env:
+            - name: AWS_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  key: AWS_ACCESS_KEY_ID
+                  name: aws-env
+            - name: AWS_DEFAULT_REGION
+              valueFrom:
+                secretKeyRef:
+                  key: AWS_DEFAULT_REGION
+                  name: aws-env
+            - name: AWS_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  key: AWS_SECRET_ACCESS_KEY
+                  name: aws-env
+          image: 681261969843.dkr.ecr.us-east-1.amazonaws.com/deepak-ae-webapp:latest
           name: webapp
           ports:
             - containerPort: 8080
