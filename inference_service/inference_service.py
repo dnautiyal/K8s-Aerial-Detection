@@ -43,6 +43,7 @@ async def detect(input_image_file_url: str, output_image_folder_url: str, output
     #We read the file and decode it
     # s3://aerial-detection-mlops4/inferencing/photos/input/19d09312c52945f8bcdd283c627d9b44-9999942_00000_d_0000214.jpg
     bucket_name, key_name_without_file, file_name = parse_s3_url(unquote(input_image_file_url))
+    logger.info(f'inference_service.detect: recieved inputfile {unquote(input_image_file_url)}')
     
     temp_input_image_filename = f'{tmp_file_folder_input}{os.sep}{file_name}'
     temp_output_image_filename = f'{tmp_output_img_folder}{os.sep}OUT-{file_name}'
@@ -57,6 +58,7 @@ async def detect(input_image_file_url: str, output_image_folder_url: str, output
 
     try:
         start_time = time.time()
+        logger.info(f'inference_service.detect:going to call triton service')
         get_triton_client().detect_image(input_image_file=temp_input_image_filename, output_image_file=temp_output_image_filename, output_label_file=temp_output_label_filename)
         logger.info(f"Time taken to run detect_image method: {int((time.time()-start_time)*1000)} milli seconds")
         out_bucket_name, out_key_name_without_file, new_out_image_file_name_only = parse_s3_url(f"{unquote(output_image_folder_url)}/{temp_output_image_filename.split('/')[-1]}")
