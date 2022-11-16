@@ -82,7 +82,7 @@ def handle_detect_photo(file):
                     "output_image_folder_url": f's3://{S3_BUCKET}/{PHOTO_OUTPUT_S3_IMAGES_KEY}',
                     "output_label_folder_url": f's3://{S3_BUCKET}/{PHOTO_OUTPUT_S3_LABELS_KEY}'
                     }
-            
+            logger.info(f"weabapp.detect - new file name: {new_file_name}")
             response = requests.get(url = PHOTO_INFERENCE_SERVICE_ENDPOINT, params = data)
             # os.remove(local_file_name)
             logger.info(f"Successfully handled {new_file_name}")
