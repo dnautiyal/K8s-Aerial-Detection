@@ -52,7 +52,7 @@ spec:
                   name: aws-env
           image: nvcr.io/nvidia/tritonserver:22.02-py3
           name: triton
-          runtime: nvidia
+          # runtime: nvidia
           volumeMounts:
             - mountPath: /dev/shm
               name: shm
