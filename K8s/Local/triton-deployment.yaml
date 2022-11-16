@@ -31,17 +31,17 @@ spec:
           env:
             - name: AWS_ACCESS_KEY_ID
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   key: AWS_ACCESS_KEY_ID
                   name: aws-env
             - name: AWS_DEFAULT_REGION
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   key: AWS_DEFAULT_REGION
                   name: aws-env
             - name: AWS_SECRET_ACCESS_KEY
               valueFrom:
-                configMapKeyRef:
+                secretKeyRef:
                   key: AWS_SECRET_ACCESS_KEY
                   name: aws-env
           image: nvcr.io/nvidia/tritonserver:22.02-py3
