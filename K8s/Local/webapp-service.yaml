@@ -7,7 +7,7 @@ metadata:
   creationTimestamp: null
   labels:
     io.kompose.service: webapp
-  name: pet-bokeh
+  name: webapp
 spec:
   ports:
     - name: "8006"
