@@ -78,7 +78,5 @@ spec:
               memory: "5Gi"
               cpu: "4"
               nvidia.com/gpu: "1"
-
-
       restartPolicy: Always
 status: {}
